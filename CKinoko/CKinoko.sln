@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CCode", "CCode\CCode.vcproj", "{FE47C38A-6C20-41AD-914A-6B9E81DE0D78}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CKinoko", "CKinoko\CKinoko.vcproj", "{FE47C38A-6C20-41AD-914A-6B9E81DE0D78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
