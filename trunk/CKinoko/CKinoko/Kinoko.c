@@ -1,15 +1,15 @@
 #include <time.h>
 #include "Kinoko.h"
 
-typedef struct KinokoResultS
-{
-	double *times;
-	int count;
-	double average;
-} KinokoResult;
-
-void CalculateAverage(KinokoResult result);
-KinokoResult CreateKinokoResult(int count);
+//typedef struct KinokoResultS
+//{
+//	double *times;
+//	int count;
+//	double average;
+//} KinokoResult;
+//
+//void CalculateAverage(KinokoResult result);
+//KinokoResult CreateKinokoResult(int count);
 
 KinokoResult Kinoko(void (*task)(), int testRepeateCount, void (*beforeTaskRun)(int), void (*afterTaskRun)(int, double))
 {
