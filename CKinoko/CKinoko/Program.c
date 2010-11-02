@@ -2,20 +2,19 @@
 #include <stdio.h>
 #include <conio.h>
 #include <time.h>
-//#include "Kinoko.h"
+#include "Kinoko.h"
 
-typedef struct KinokoResultS
-{
-	double *times;
-	int count;
-	double average;
-} KinokoResult;
+//typedef struct KinokoResultS
+//{
+//	double *times;
+//	int count;
+//	double average;
+//} KinokoResult;
 
 void Task();
 void Pause();
 void Kinoko_BeforeTaskRun(int stepIndex);
 void Kinoko_AfterTaskRun(int stepIndex, double time);
-KinokoResult Kinoko(void (*task)(), int testRepeateCount, void (*beforeTaskRun)(int), void (*afterTaskRun)(int, double));
 
 int count = 100000000;
 int taskRunCount = 10;
