@@ -2,23 +2,33 @@
 #include <stdio.h>
 #include <conio.h>
 #include <time.h>
+//#include "Kinoko.h"
+
+typedef struct KinokoResultS
+{
+	double *times;
+	int count;
+	double average;
+} KinokoResult;
 
 void Task();
 void Pause();
 void Kinoko_BeforeTaskRun(int stepIndex);
 void Kinoko_AfterTaskRun(int stepIndex, double time);
-double Kinoko(void (*task)(), int testRepeateCount, void (*beforeTaskRun)(int), void (*afterTaskRun)(int, double));
+KinokoResult Kinoko(void (*task)(), int testRepeateCount, void (*beforeTaskRun)(int), void (*afterTaskRun)(int, double));
 
 int count = 100000000;
 int taskRunCount = 10;
 
 void main ()
 {
-	double milis = Kinoko(&Task, taskRunCount, &Kinoko_BeforeTaskRun, &Kinoko_AfterTaskRun);
+	KinokoResult result = Kinoko(&Task, taskRunCount, &Kinoko_BeforeTaskRun, &Kinoko_AfterTaskRun);
 	
 	printf("\n");
-	printf("Avarage time: %.2f milisec\n", milis);
+	printf("Average time: %.2f milisec\n", result.average);
 	Pause();
+
+	DestroyKinokoResult(result);
 }
 
 void Task()

@@ -1,11 +1,19 @@
 #include <time.h>
+#include "Kinoko.h"
 
-double CalculateAvarage(double values[], int count);
-
-double Kinoko(void (*task)(), int testRepeateCount, void (*beforeTaskRun)(int), void (*afterTaskRun)(int, double))
+typedef struct KinokoResultS
 {
-	double* times = (double*)malloc( sizeof(double) * testRepeateCount);
-	double avarage = 0;
+	double *times;
+	int count;
+	double average;
+} KinokoResult;
+
+void CalculateAverage(KinokoResult result);
+KinokoResult CreateKinokoResult(int count);
+
+KinokoResult Kinoko(void (*task)(), int testRepeateCount, void (*beforeTaskRun)(int), void (*afterTaskRun)(int, double))
+{
+	KinokoResult result = CreateKinokoResult(testRepeateCount);
 	clock_t t1;
 	clock_t t2;
 
@@ -24,16 +32,43 @@ double Kinoko(void (*task)(), int testRepeateCount, void (*beforeTaskRun)(int), 
 		t2 = clock();
 
 		// Calculate and store the time in which the task run.
-		times[i] = (t2-t1) / (double)CLOCKS_PER_SEC * 1000;
-	
+		result.times[i] = (t2-t1) / (double)CLOCKS_PER_SEC * 1000;
+
 		// Announce that the Task was run.
 		if (afterTaskRun != NULL)
-			afterTaskRun(i, times[i]);
+			afterTaskRun(i, result.times[i]);
 	}
 
 	// Calculate the avarage.
-	avarage = CalculateAvarage(times, testRepeateCount);
+	CalculateAverage(result);
 
-	free(times);
-	return avarage;
+	//free(times);
+	return result;
+}
+
+KinokoResult CreateKinokoResult(int count)
+{
+	KinokoResult result;
+	result.times = (double*)malloc(sizeof(double) * count);
+	result.count = count;
+	return result;
+}
+
+DestroyKinokoResult(KinokoResult result)
+{
+	free(result.times);
+}
+
+void CalculateAverage(KinokoResult result)
+{
+	double sum = 0;
+	int i;
+
+	for (i = 0; i < result.count; i++)
+	{
+		sum += result.times[i];
+	}
+
+	result.average = sum / (double)result.count;
+	return result;
 }
