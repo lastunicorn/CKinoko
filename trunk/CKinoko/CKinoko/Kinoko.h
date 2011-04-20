@@ -17,6 +17,12 @@
 #ifndef KINOKO_H
 #define KINOKO_H
 
+#ifdef CKINOKO_EXPORTS
+	#define DECLSPEC __declspec(dllexport)
+#else
+	#define DECLSPEC __declspec(dllimport)
+#endif
+
 typedef struct KinokoRequest
 {
 	void (*task)();
@@ -38,7 +44,7 @@ The task from the request is run multiple times and then an average is
 calculated.
 --------------------------------------------------------------------------------
 */
-int Kinoko(KinokoRequest request, KinokoResult **result);
+DECLSPEC int Kinoko(KinokoRequest request, KinokoResult **result);
 
 /*
 --------------------------------------------------------------------------------
@@ -67,6 +73,6 @@ void CalculateAverage(KinokoResult *result);
 Returns the error message for the specified error code of the Kinoko function.
 --------------------------------------------------------------------------------
 */
-char* GetKinokoErrorMessage(int errorCode);
+DECLSPEC char* GetKinokoErrorMessage(int errorCode);
 
 #endif
