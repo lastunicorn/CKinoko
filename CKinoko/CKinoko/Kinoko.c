@@ -18,6 +18,7 @@
 CKinoko Version 1.0.0
 */
 
+#include <stdlib.h>
 #include <time.h>
 #include "Kinoko.h"
 
