@@ -1,5 +1,5 @@
 // CKinoko
-// Copyright (C) 2010 Dust in the Wind
+// Copyright (C) 2011 Dust in the Wind
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -27,7 +27,18 @@ void Pause();
 void Kinoko_BeforeTaskRun(int stepIndex);
 void Kinoko_AfterTaskRun(int stepIndex, double time);
 
+/*
+--------------------------------------------------------------------------------
+The number of times the task is tested.
+--------------------------------------------------------------------------------
+*/
 int taskRunCount = 10;
+
+/*
+--------------------------------------------------------------------------------
+The time in miliseconds for the tested task to sleep.
+--------------------------------------------------------------------------------
+*/
 int sleepMilli = 300;
 
 /*
