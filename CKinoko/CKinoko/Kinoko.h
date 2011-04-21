@@ -1,5 +1,5 @@
 // CKinoko
-// Copyright (C) 2010 Dust in the Wind
+// Copyright (C) 2011 Dust in the Wind
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -23,6 +23,12 @@
 	#define CKINOKO_API __declspec(dllimport)
 #endif
 
+
+/*
+--------------------------------------------------------------------------------
+Contains all the data requested to perform a Kinoko test.
+--------------------------------------------------------------------------------
+*/
 typedef struct KinokoRequest
 {
 	void (*task)();
@@ -31,6 +37,11 @@ typedef struct KinokoRequest
 	void (*afterTaskRun)(int, double);
 } KinokoRequest;
 
+/*
+--------------------------------------------------------------------------------
+Contains the results of a Kinoko test.
+--------------------------------------------------------------------------------
+*/
 typedef struct KinokoResult
 {
 	double *times;
