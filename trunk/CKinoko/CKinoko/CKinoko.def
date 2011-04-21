@@ -1,6 +1,6 @@
-LIBRARY   CKinoko
+LIBRARY CKinoko
 ;DESCRIPTION "CKinoko"
-EXPORTS  
+EXPORTS
 	Kinoko
 	GetKinokoErrorMessage
 	CreateKinokoResult
