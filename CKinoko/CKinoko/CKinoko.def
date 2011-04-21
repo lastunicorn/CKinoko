@@ -1,5 +1,7 @@
 LIBRARY   CKinoko
-DESCRIPTION "CKinoko"
+;DESCRIPTION "CKinoko"
 EXPORTS  
-    Kinoko
+	Kinoko
 	GetKinokoErrorMessage
+	CreateKinokoResult
+	DestroyKinokoResult
