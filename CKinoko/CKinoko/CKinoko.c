@@ -16,7 +16,7 @@
 
 #include <stdlib.h>
 #include <time.h>
-#include "Kinoko.h"
+#include "CKinoko.h"
 
 /*
 --------------------------------------------------------------------------------

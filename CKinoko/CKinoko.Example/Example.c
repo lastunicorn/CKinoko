@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <time.h>
-#include "Kinoko.h"
+#include "CKinoko.h"
 #include "windows.h"
 
 
