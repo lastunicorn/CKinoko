@@ -54,7 +54,7 @@ void main ()
 
 	printf("CKinoko usage example\n");
 	printf("===============================================================================\n");
-	printf("Running a fake task that junst sleeps for %d milliseconds.\n", sleepMilli);
+	printf("Running a fake task that just sleeps for %d milliseconds.\n", sleepMilli);
 	printf("The test is repeated %d times and the avarage time is displayed.\n", taskRunCount);
 	printf("\n");
 
