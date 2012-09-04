@@ -1,0 +1,21 @@
+CKinoko v1.0
+============
+
+There are two projects in the solution at the moment:
+	- CKinoko - the framework
+	- CKinoko.Example - an example of how the framework can be used.
+
+
+1) Project: CKinoko
+-------------------
+Contains the Kinoko function. This function does the measurement and returns the calculated average.
+
+
+2) Project CKinoko.Example
+--------------------------
+Contains the main function that calls the Kinoko function. The result is displayed in the console.
+
+
+3) Future features
+------------------
+	- Create a console application that can take as parameter a dll and a function name and measure it.
